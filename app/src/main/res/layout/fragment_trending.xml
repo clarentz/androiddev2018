@@ -1,0 +1,327 @@
+<ScrollView android:id="@+id/trending_fragment"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="group5.ansnewsreader.TrendingFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/color_trending_background"
+        android:paddingTop="@dimen/trending_padding"
+        android:paddingBottom="@dimen/trending_padding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_trendingnews_fragment"
+            android:background="@color/color_trendingnews_fragment"
+            android:orientation="vertical">
+
+            <LinearLayout  
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/weight_3"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/sample_header1"
+                        android:textSize="@dimen/headline_fontsize"
+                        android:padding="@dimen/headline_padding"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_sourceandtime1"
+                        android:textSize="@dimen/sourceandtime_fontsize"
+                        android:padding="@dimen/sourceandtime_padding"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/handsome_jack" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/content_padding"
+                android:text="@string/sample_content1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_trendingnews_fragment"
+            android:background="@color/color_trendingnews_fragment"
+            android:orientation="vertical">
+
+            <LinearLayout  
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/weight_3"
+                    android:orientation="vertical">
+
+                    <TextView  
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/sample_header1"
+                        android:textSize="@dimen/headline_fontsize"
+                        android:padding="@dimen/headline_padding"/>
+
+                    <TextView  
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_sourceandtime1"
+                        android:textSize="@dimen/sourceandtime_fontsize"
+                        android:padding="@dimen/sourceandtime_padding"/>
+
+                </LinearLayout>
+
+                <ImageView  
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/handsome_jack"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sample_content1"
+                android:padding="@dimen/content_padding"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_trendingnews_fragment"
+            android:background="@color/color_trendingnews_fragment"
+            android:orientation="vertical">
+
+            <LinearLayout  
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/weight_3"
+                    android:orientation="vertical">
+
+                    <TextView  
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/sample_header1"
+                        android:textSize="@dimen/headline_fontsize"
+                        android:padding="@dimen/headline_padding"/>
+
+                    <TextView  
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_sourceandtime1"
+                        android:textSize="@dimen/sourceandtime_fontsize"
+                        android:padding="@dimen/sourceandtime_padding"/>
+
+                </LinearLayout>
+
+                <ImageView  
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/handsome_jack"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sample_content1"
+                android:padding="@dimen/content_padding"/>
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_trendingnews_fragment"
+            android:background="@color/color_trendingnews_fragment"
+            android:orientation="vertical">
+
+            <LinearLayout  
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/weight_3"
+                    android:orientation="vertical">
+
+                    <TextView  
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/sample_header1"
+                        android:textSize="@dimen/headline_fontsize"
+                        android:padding="@dimen/headline_padding"/>
+
+                    <TextView  
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_sourceandtime1"
+                        android:textSize="@dimen/sourceandtime_fontsize"
+                        android:padding="@dimen/sourceandtime_padding"/>
+
+                </LinearLayout>
+
+                <ImageView  
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/handsome_jack"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sample_content1"
+                android:padding="@dimen/content_padding"/>
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_trendingnews_fragment"
+            android:background="@color/color_trendingnews_fragment"
+            android:orientation="vertical">
+
+            <LinearLayout  
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/weight_3"
+                    android:orientation="vertical">
+
+                    <TextView  
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/sample_header1"
+                        android:textSize="@dimen/headline_fontsize"
+                        android:padding="@dimen/headline_padding"/>
+
+                    <TextView  
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_sourceandtime1"
+                        android:textSize="@dimen/sourceandtime_fontsize"
+                        android:padding="@dimen/sourceandtime_padding"/>
+
+                </LinearLayout>
+
+                <ImageView  
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/handsome_jack"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sample_content1"
+                android:padding="@dimen/content_padding"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_trendingnews_fragment"
+            android:background="@color/color_trendingnews_fragment"
+            android:orientation="vertical">
+
+            <LinearLayout  
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/weight_3"
+                    android:orientation="vertical">
+
+                    <TextView  
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/sample_header1"
+                        android:textSize="@dimen/headline_fontsize"
+                        android:padding="@dimen/headline_padding"/>
+
+                    <TextView  
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_sourceandtime1"
+                        android:textSize="@dimen/sourceandtime_fontsize"
+                        android:padding="@dimen/sourceandtime_padding"/>
+
+                </LinearLayout>
+
+                <ImageView  
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/handsome_jack"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sample_content1"
+                android:padding="@dimen/content_padding"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

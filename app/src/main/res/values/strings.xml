@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">ANSNewsReader</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    //Styles
+    <string name="fontstyle_bold">bold</string>
+
+    //Contents
+    <string name="paris">Paris, France</string>
+    <string name="sample_header1">The president of the Pandora is very handsome, thats why we call him Handsome Jack</string>
+    <string name="sample_sourceandtime1">Pandora News - 20 minutes ago</string>
+    <string name="sample_content1">He has taken over the Hyperion corporation, declared himself dictator of Pandora, and stolen all of the credit for finding The Vault, going so far as to claim responsibility for killing The Destroyer.</string>
+
+    //Tabs
+    <string name="trending">Trending</string>
+    <string name="weather">Weather</string>
+    <string name="science">Science</string>
+    <string name="sport">Sport</string>
+    <string name="tech">Technology</string>
+
+    //Days of the week
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Thu</string>
+    <string name="friday">Fri</string>
+    <string name="saturday">Sat</string>
+    <string name="sunday">Sun</string>
+
+    //Weather condition
+    <string name="partly_cloudy">Partly Cloudy</string>
+
+    //Temperature
+    <string name="sample_temperature1">24C - 31C</string>
+    <string name="sample_temperature2">12C</string>
+
+    //Menu Options
+    <string name="menu_action_setting">Setting</string>
+    <string name="menu_action_about">About</string>
+    <string name="menu_action_search">Search</string>
+
+    //Nav Bar
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="menu_action_help">Help</string>
+    <string name="ans">ANS News Reader</string>
+    <string name="theonlyans">The only answer for News Reader app!</string>
+
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //Auto
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    //Pallete
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey_pink">#FF928B8B</color>
+    <color name="grey">#FF7E7E7E</color>
+    <color name="grey_brown">#FF403838</color>
+    <color name="black">#FF000000</color>
+    <color name="diamond">#FF54bca2</color>
+
+    //Trending
+    <color name="color_trendingnews_fragment">#40FF4081</color>
+    <color name="color_trending_background">#FFFFFFFF</color>
+
+    //Weather
+    <color name="color_forecast">#400000FF</color>
+    <color name="color_weather">#4000FF00</color>
+
+    //Tab
+    <color name="color_tab">#FF54bca2</color>
+
+
+</resources>

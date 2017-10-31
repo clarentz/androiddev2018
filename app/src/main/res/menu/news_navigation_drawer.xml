@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_trending"
+        android:title="@string/trending"
+        android:icon="@drawable/ic_trending_up_black_24dp"/>
+
+    <item android:id="@+id/nav_weather"
+        android:title="@string/weather"
+        android:icon="@drawable/ic_weather"/>
+
+    <item android:id="@+id/nav_science"
+        android:title="@string/science"
+        android:icon="@drawable/ic_science"/>
+
+    <item android:id="@+id/nav_sport"
+        android:title="@string/sport"
+        android:icon="@drawable/ic_rowing_black_24dp"/>
+
+    <item android:id="@+id/nav_tech"
+        android:title="@string/tech"
+        android:icon="@drawable/ic_tech"/>
+</menu>
