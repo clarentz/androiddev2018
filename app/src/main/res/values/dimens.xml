@@ -2,7 +2,7 @@
 <resources>
     //
     <dimen name="margin_newsfragment">13dp</dimen>
-    <dimen name="margin_trendingnews_fragment">6.7dp</dimen>
+    <dimen name="margin_trending_fragment">15dp</dimen>
 
     //Trending
     <dimen name="trending_padding">6dp</dimen>
@@ -23,5 +23,8 @@
     //Nav Bar
     <dimen name="nav_header_height">140dp</dimen>
     <dimen name="nav_header_padding">20dp</dimen>
+
+    //Menu Toolbar
+    <dimen name="elevation">5dp</dimen>
 
 </resources>

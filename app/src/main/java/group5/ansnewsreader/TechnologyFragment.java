@@ -25,39 +25,48 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 
-public class TrendingFragment extends Fragment {
+public class TechnologyFragment extends Fragment {
 
     public ArrayList<NewsItem> newsArrayList = new ArrayList<>();
-    ListView trendingListView;
-    NewsAdapter trendingNewsAdapter;
+    ListView technologyListView;
+    NewsAdapter technologyNewsAdapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View newsView = inflater.inflate(R.layout.fragment_trending, container, false);
+        View newsView = inflater.inflate(R.layout.fragment_sport, container, false);
 
-        trendingNewsAdapter = new NewsAdapter(getContext(), newsArrayList);
-        trendingListView = newsView.findViewById(R.id.trending_fragment);
-        trendingListView.setAdapter(trendingNewsAdapter);
+        technologyNewsAdapter = new NewsAdapter(getContext(), newsArrayList);
+        technologyListView = newsView.findViewById(R.id.sport_fragment);
+        technologyListView.setAdapter(technologyNewsAdapter);
 
         ArrayList<String> urlList = new ArrayList<>();
 
         //URL List and getting JSON from them
-        urlList.add("https://newsapi.org/v2/top-headlines?sources=espn&apiKey=7e553ac61ba547218e4e700910752186"); //ESPN
-        urlList.add("https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=7e553ac61ba547218e4e700910752186"); //CNN
-        urlList.add("https://newsapi.org/v2/top-headlines?sources=reddit-r-all&apiKey=7e553ac61ba547218e4e700910752186"); //Reddit
-        urlList.add("https://newsapi.org/v2/top-headlines?sources=ign&apiKey=7e553ac61ba547218e4e700910752186"); //IGN
-        urlList.add("https://newsapi.org/v2/top-headlines?sources=crypto-coins-news&apiKey=7e553ac61ba547218e4e700910752186"); //Crypto Coin News
-        urlList.add("https://newsapi.org/v2/top-headlines?sources=mtv-news&apiKey=7e553ac61ba547218e4e700910752186"); //MTV
-        urlList.add("https://newsapi.org/v2/top-headlines?sources=talksport&apiKey=7e553ac61ba547218e4e700910752186"); //TalkSport
-        urlList.add("https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=7e553ac61ba547218e4e700910752186"); //TechCrunch
-        urlList.add("https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=7e553ac61ba547218e4e700910752186"); //Google News
-        urlList.add("https://newsapi.org/v2/top-headlines?sources=the-huffington-post&apiKey=7e553ac61ba547218e4e700910752186"); //Huffington Post
-        urlList.add("https://newsapi.org/v2/top-headlines?sources=buzzfeed&apiKey=7e553ac61ba547218e4e700910752186"); //Buzzfeed
+        urlList.add("https://newsapi.org/v2/top-headlines?sources=hacker-news&apiKey=7e553ac61ba547218e4e700910752186"); //Hacker News
+        for (int i = 0; i < 2; i++) {
+            JSONfunction(urlList.get(0), i);
+        }
 
-        for (int i = 0; i < 10; i++) {
-            JSONfunction(urlList.get(i), 0);
+        urlList.add("https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=7e553ac61ba547218e4e700910752186"); //TechCrunch
+        for (int i = 0; i < 2; i++) {
+            JSONfunction(urlList.get(1), i);
+        }
+
+        urlList.add("https://newsapi.org/v2/top-headlines?sources=wired&apiKey=7e553ac61ba547218e4e700910752186"); //Wired
+        for (int i = 0; i < 2; i++) {
+            JSONfunction(urlList.get(2), i);
+        }
+
+        urlList.add("https://newsapi.org/v2/top-headlines?sources=crypto-coins-news&apiKey=7e553ac61ba547218e4e700910752186"); //Crypto Coin News
+        for (int i = 0; i < 2; i++) {
+            JSONfunction(urlList.get(3), i);
+        }
+
+        urlList.add("https://newsapi.org/v2/top-headlines?sources=t3n&apiKey=7e553ac61ba547218e4e700910752186"); //T3n
+        for (int i = 0; i < 2; i++) {
+            JSONfunction(urlList.get(4), i);
         }
         return newsView;
     }
@@ -96,14 +105,14 @@ public class TrendingFragment extends Fragment {
                         NewsItem newsItem = new NewsItem(getContext(), titleJson, sourceJson, descriptionJson);
                         newsArrayList.add(newsItem);
                         final int postion = newsArrayList.indexOf(newsItem);
-                        trendingNewsAdapter.notifyDataSetChanged();
+                        technologyNewsAdapter.notifyDataSetChanged();
 
                         //Bitmap Listener
                         Response.Listener<Bitmap>bitmapListener = new Response.Listener<Bitmap>() {
                             @Override
                             public void onResponse(Bitmap response) {
                                 newsArrayList.get(postion).thumbnail = response;
-                                trendingNewsAdapter.notifyDataSetChanged();
+                                technologyNewsAdapter.notifyDataSetChanged();
                             }
                         };
 
@@ -119,6 +128,7 @@ public class TrendingFragment extends Fragment {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+
             }
         });
         ((NewsQueueApp)getActivity().getApplication()).getQueue().add(newsRequest);//JSON Request

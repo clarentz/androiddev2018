@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/help_container"
+    tools:context="group5.ansnewsreader.HelpActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="@dimen/elevation"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentTop="@bool/yes"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <TextView android:id="@+id/group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Have some troubles?\nNeed help?\nCall this number!"
+        android:layout_centerHorizontal="@bool/yes"
+        android:layout_centerVertical="@bool/yes"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent_backup"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/group_name"
+        android:layout_centerHorizontal="@bool/yes"
+        android:textSize="25sp"
+        android:text="01882615387"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"/>
+</RelativeLayout>
