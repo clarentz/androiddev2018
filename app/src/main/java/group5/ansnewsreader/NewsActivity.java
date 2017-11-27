@@ -7,6 +7,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -71,13 +72,6 @@ public class NewsActivity extends AppCompatActivity implements NavigationView.On
         //Navigation Drawer
         newsDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         newsToggle= new ActionBarDrawerToggle(this, newsDrawerLayout, R.string.open, R.string.close);
-        //set click listener on drawer icon to open
-        menutoolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                newsDrawerLayout.openDrawer(Gravity.START);
-            }
-        });
 
         newsDrawerLayout.addDrawerListener(newsToggle);
         newsToggle.syncState();
@@ -85,8 +79,6 @@ public class NewsActivity extends AppCompatActivity implements NavigationView.On
 
         navView = (NavigationView) findViewById(R.id.nav_view);
         navView.setNavigationItemSelectedListener(this);
-        //Volley
-        //queue = Volley.newRequestQueue(this);
     }
 
     //Navigation
@@ -118,44 +110,27 @@ public class NewsActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
     //Menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 
-            /*
-            //Unnecessary
-            case R.id.action_refresh:
-
-                Response.Listener<String> listener = new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.i("ANSNewsReader", "Json response " + response);
-                    }
-                };
-
-                Response.ErrorListener errorlistener = new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                    }
-                };
-
-                url = "http://www.google.com";
-                StringRequest urlrequest = new StringRequest(Request.Method.GET, url, listener, errorlistener);
-
-                queue.add(urlrequest);
-                queue.start();
-
-                break;
-            */
+            case android.R.id.home:
+                newsDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
 
             case R.id.action_setting:
                 Intent settingIntert = new Intent(NewsActivity.this, SettingActivity.class);
                 NewsActivity.this.startActivity(settingIntert);
-                break;
-
-            case R.id.action_search:
-
                 break;
 
             case R.id.action_about:

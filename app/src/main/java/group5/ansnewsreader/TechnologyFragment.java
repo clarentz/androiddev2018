@@ -1,5 +1,6 @@
 package group5.ansnewsreader;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -68,6 +70,18 @@ public class TechnologyFragment extends Fragment {
         for (int i = 0; i < 2; i++) {
             JSONfunction(urlList.get(4), i);
         }
+
+        //Open a new activity when click on a newsItem
+        technologyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                NewsItem newsItem = (NewsItem) technologyListView.getItemAtPosition(position);
+                Intent intent = new Intent(getContext(),WebActivity.class);
+                intent.putExtra("url",newsItem.url);
+                intent.putExtra("source",newsItem.source);
+                startActivity(intent);
+            }
+        });
         return newsView;
     }
 
@@ -81,9 +95,10 @@ public class TechnologyFragment extends Fragment {
                         String sourceJson = null;
                         String descriptionJson = null;
                         String thumbnailJson = null;
+                        String urlJson = null;
 
                         //Log
-                        Log.i("JSON", "responsed!");
+                        Log.i("TechnologyJSON", "responsed!");
 
                         try {
 
@@ -96,22 +111,23 @@ public class TechnologyFragment extends Fragment {
                             thumbnailJson = theJson.getString("urlToImage");
                             sourceJson = "from " + theJson.getJSONObject("source").getString("name");
                             descriptionJson = theJson.getString("description");
+                            urlJson = theJson.getString("url");
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
 
                         //parse to the newsItem
-                        NewsItem newsItem = new NewsItem(getContext(), titleJson, sourceJson, descriptionJson);
+                        NewsItem newsItem = new NewsItem(getContext(), titleJson, sourceJson, descriptionJson, urlJson);
                         newsArrayList.add(newsItem);
-                        final int postion = newsArrayList.indexOf(newsItem);
+                        final int position = newsArrayList.indexOf(newsItem);
                         technologyNewsAdapter.notifyDataSetChanged();
 
                         //Bitmap Listener
                         Response.Listener<Bitmap>bitmapListener = new Response.Listener<Bitmap>() {
                             @Override
                             public void onResponse(Bitmap response) {
-                                newsArrayList.get(postion).thumbnail = response;
+                                newsArrayList.get(position).thumbnail = response;
                                 technologyNewsAdapter.notifyDataSetChanged();
                             }
                         };

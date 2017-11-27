@@ -3,11 +3,11 @@
 <!--This is how a single news item look-->
 
 <LinearLayout
+    android:id="@+id/news_item"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    android:background="@color/white"
     android:orientation="vertical"
     android:padding="@dimen/trending_padding">
 
@@ -24,7 +24,7 @@
             android:textStyle="bold"
             android:textSize="18sp"
             android:textAlignment="viewStart"
-            android:textColor="@color/colorAccent_backup"/>
+            android:textColor="@color/colorPrimaryDark"/>
 
         <ImageView android:id="@+id/thumbnail"
             android:layout_width="0dp"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="viewStart"
         android:text="source"
-        android:textColor="@color/grey_green"/>
+        android:textColor="@color/grey"/>
 
     <TextView android:id="@+id/description"
         android:layout_width="match_parent"

@@ -12,17 +12,17 @@ public class NewsItem {
 
     private Context context;
     public String title = "default title";
-    public String source = "default source";
+    public String source = "Broken source";
     public String description = "default description";
+    public String url;
     public Bitmap thumbnail = null;
 
-    public NewsItem(Context context, String title, String source, String description) {
+    public NewsItem(Context context, String title, String source, String description, String url) {
         this.context = context;
         this.title = title;
         this.source = source;
         this.description = description;
+        this.url = url;
         this.thumbnail = BitmapFactory.decodeStream(context.getResources().openRawResource(R.raw.fail));
     }
-
-
 }

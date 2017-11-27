@@ -1,5 +1,6 @@
 package group5.ansnewsreader;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -28,8 +30,8 @@ import java.util.ArrayList;
 public class TrendingFragment extends Fragment {
 
     public ArrayList<NewsItem> newsArrayList = new ArrayList<>();
-    ListView trendingListView;
-    NewsAdapter trendingNewsAdapter;
+    public ListView trendingListView;
+    public NewsAdapter trendingNewsAdapter;
 
     @Nullable
     @Override
@@ -59,22 +61,35 @@ public class TrendingFragment extends Fragment {
         for (int i = 0; i < 10; i++) {
             JSONfunction(urlList.get(i), 0);
         }
+
+        //Open a new activity when click on a newsItem
+        trendingListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                NewsItem newsItem = (NewsItem) trendingListView.getItemAtPosition(position);
+                Intent intent = new Intent(getContext(),WebActivity.class);
+                intent.putExtra("url",newsItem.url);
+                intent.putExtra("source",newsItem.source);
+                startActivity(intent);
+            }
+        });
         return newsView;
     }
 
     public void JSONfunction(String url, final int index) {
 
         JsonObjectRequest newsRequest = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
+                    new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         String titleJson = null;
                         String sourceJson = null;
                         String descriptionJson = null;
                         String thumbnailJson = null;
+                        String urlJson = null;
 
                         //Log
-                        Log.i("JSON", "responsed!");
+                        Log.i("TrendingJSON", "responsed!");
 
                         try {
 
@@ -87,22 +102,23 @@ public class TrendingFragment extends Fragment {
                             thumbnailJson = theJson.getString("urlToImage");
                             sourceJson = "from " + theJson.getJSONObject("source").getString("name");
                             descriptionJson = theJson.getString("description");
+                            urlJson = theJson.getString("url");
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
 
                         //parse to the newsItem
-                        NewsItem newsItem = new NewsItem(getContext(), titleJson, sourceJson, descriptionJson);
+                        NewsItem newsItem = new NewsItem(getContext(), titleJson, sourceJson, descriptionJson, urlJson);
                         newsArrayList.add(newsItem);
-                        final int postion = newsArrayList.indexOf(newsItem);
+                        final int position = newsArrayList.indexOf(newsItem);
                         trendingNewsAdapter.notifyDataSetChanged();
 
                         //Bitmap Listener
                         Response.Listener<Bitmap>bitmapListener = new Response.Listener<Bitmap>() {
                             @Override
                             public void onResponse(Bitmap response) {
-                                newsArrayList.get(postion).thumbnail = response;
+                                newsArrayList.get(position).thumbnail = response;
                                 trendingNewsAdapter.notifyDataSetChanged();
                             }
                         };
@@ -123,6 +139,5 @@ public class TrendingFragment extends Fragment {
         });
         ((NewsQueueApp)getActivity().getApplication()).getQueue().add(newsRequest);//JSON Request
     }
-
 }
 
