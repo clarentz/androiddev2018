@@ -14,7 +14,7 @@ Student Info
 * ID: USTHBI6 - 088
 * Name: Vu Tuan Dat
 * ID: USTHBI6 - 032
-* Name: Nguyen Thanh Long
+* Name: Bui Viet Hung
 * ID: USTHBI6 - 0xx
 
 
