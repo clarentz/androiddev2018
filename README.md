@@ -10,7 +10,13 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: *YourNameHere*
-* ID: *YourIdHere*
-* Group ID: *Your Group ID here*
-* Project Name: *Your Project Name here*
+* Name: Nguyen Thanh Long
+* ID: USTHBI6 - 088
+* Name: Vu Tuan Dat
+* ID: USTHBI6 - 032
+* Name: Nguyen Thanh Long
+* ID: USTHBI6 - 0xx
+
+
+* Group ID: 5
+* Project Name: ANS News Reader
